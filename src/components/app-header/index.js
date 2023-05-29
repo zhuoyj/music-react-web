@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 
 import { headerLinks } from "@/common/local-data";
 
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { SearchOutlined } from '@ant-design/icons'
 import { Input } from "antd";
 import {
@@ -17,10 +17,10 @@ const ZYAppHeader = memo(() => {
   const showSelectItem = (item, index) => {
     if (index < 3) {
       return (
-        <NavLink to={item.link}>
+        <Link to={item.link}>
           {item.title}
           <i className="sprite_01 icon"></i>
-        </NavLink>
+        </Link>
       )
     } else {
       return <a href={item.link}>{item.title}</a>

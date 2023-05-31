@@ -17,9 +17,10 @@ export function getHotRecommends(limit) {
 
 export function getNewAlbums(limit) {
   return request({
-    url: "/top/album",
+    // url: "/top/album",
+    url: "/personalized",
     params: {
-      limit
+      limit,
     }
   })
 }

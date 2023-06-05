@@ -3,7 +3,11 @@ import React, { memo } from 'react';
 import ZYTopBanner from './c-cpns/top-banner';
 import ZYHotRecommend from './c-cpns/hot-recommend';
 import ZYRecommendRanking from './c-cpns/recommend-ranking';
-import ZYNewAlbum from './c-cpns/new-album'
+import ZYNewAlbum from './c-cpns/new-album';
+import ZYUserLogin from './c-cpns/user-login';
+import ZYSettleSinger from './c-cpns/settle-singer';
+import ZYHotAnchor from './c-cpns/hot-anchor';
+
 import {
   RecommendWrapper,
   Content,
@@ -19,10 +23,14 @@ function ZYRecommend(props) {
       <Content className='wrap-v2'>
         <RecommendLeft>
           <ZYHotRecommend />
-          <ZYRecommendRanking/>
           <ZYNewAlbum/>
+          <ZYRecommendRanking/>
         </RecommendLeft>
-        <RecommendRight></RecommendRight>
+        <RecommendRight>
+          <ZYUserLogin />
+          <ZYSettleSinger />
+          <ZYHotAnchor/>
+        </RecommendRight>
       </Content>
     </RecommendWrapper>
   )

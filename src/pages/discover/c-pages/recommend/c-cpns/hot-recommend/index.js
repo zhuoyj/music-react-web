@@ -17,7 +17,7 @@ export default memo(function ZYHotRecommend() {
     hotRecommends: state.getIn(["recommend", "hotRecommends"])
   }), shallowEqual)
   const dispatch = useDispatch();
-  console.log(hotRecommends);
+  // console.log(hotRecommends);
 
   // other hooks
   useEffect(() => {

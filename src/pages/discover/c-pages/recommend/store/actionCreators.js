@@ -3,7 +3,8 @@ import * as actionTypes from './constants';
 import {
   getTopBanners,
   getHotRecommends,
-  getNewAlbums
+  getNewAlbum,
+  getTopList
 } from '@/services/recommend';
 
 const changeTopBannerAction = (res) => (
@@ -20,8 +21,24 @@ const changeHotRecommendAction = (res) => ({
 
 const changeNewAlbumAction = (res) => ({
   type: actionTypes.CHANGE_NEW_ALBUM,
-  newAlbums: res.result
+  newAlbums: res.albums
 })
+
+const changeUpRankingAction = (res) => ({
+  type: actionTypes.CHANGE_UP_RANKING,
+  upRanking: res.playlist
+})
+
+const changeNewRankingAction = (res) => ({
+  type: actionTypes.CHANGE_NEW_RANKING,
+  newRanking: res.playlist
+})
+
+const changeOriginRankingAction = (res) => ({
+  type: actionTypes.CHANGE_ORIGIN_RANKING,
+  originRanking: res.playlist
+})
+
 export const getTopBannerAction = () => {
   return dispatch => {
     getTopBanners().then(res => {
@@ -39,11 +56,37 @@ export const getHotRecommendAction = (limit) => {
   }
 }
 
-export const getNewAlbumAction = (limit) => {
+export const getNewAlbumAction = () => {
+  // return dispatch => {
+  //   getNewAlbums(limit).then(res => {
+  //     // console.log(res);
+  //     dispatch(changeNewAlbumAction(res))
+  //   })
+  // }
   return dispatch => {
-    getNewAlbums(limit).then(res => {
-      console.log(res);
+    getNewAlbum(10, 0).then(res => {
       dispatch(changeNewAlbumAction(res))
+    })
+  }
+}
+
+export const getTopListAction = (idx) => {
+  return dispatch => {
+    getTopList(idx).then(res => {
+      // console.log(res)
+      switch (idx) {
+        case 19723756:
+          dispatch(changeNewRankingAction(res));
+          break;
+        case 3779629:
+          dispatch(changeOriginRankingAction(res));
+          break;
+        case 2884035:
+          dispatch(changeUpRankingAction(res));
+          break;
+        default:
+          console.log("其他数据处理");
+      }
     })
   }
 }

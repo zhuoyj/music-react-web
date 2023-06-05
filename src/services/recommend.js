@@ -15,21 +15,38 @@ export function getHotRecommends(limit) {
   })
 }
 
-export function getNewAlbums(limit) {
+// export function getNewAlbums(limit) {
+//   return request({
+//     // url: "/top/album",
+//     url: "/personalized",
+//     params: {
+//       limit,
+//     }
+//   })
+// }
+export function getNewAlbum(limit, offset) {
   return request({
-    // url: "/top/album",
-    url: "/personalized",
+    url: "/album/new",
     params: {
       limit,
+      offset
     }
   })
 }
+// export function getTopList(idx) {
+//   return request({
+//     url: "/top/list",
+//     params: {
+//       idx
+//     }
+//   })
+// }
 
-export function getTopList(idx) {
+export function getTopList(id) {
   return request({
-    url: "/top/list",
+    url: "/playlist/detail",
     params: {
-      idx
+      id
     }
   })
 }

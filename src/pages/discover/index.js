@@ -15,7 +15,7 @@ const ZYDiscover = memo((props) => {
     axios({
       url: "/banner"
     }).then(res => {
-      console.log(res);
+      // console.log(res);
     })
   },[])
 

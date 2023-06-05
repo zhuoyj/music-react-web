@@ -18,7 +18,7 @@ const dispatch = useDispatch();
 // other hooks
 const pageRef = useRef();
 useEffect(() => {
-  dispatch(getNewAlbumAction(10));
+  dispatch(getNewAlbumAction());
 }, [dispatch]);
   return (
     <AlbumWrapper>

@@ -5,9 +5,10 @@ import { Provider } from 'react-redux';
 import routes from './router'
 import store from './store';
 
+import { useRoutes } from 'react-router-dom'
 import ZYAppHeader from '@/components/app-header'
 import ZYAppFooter from '@/components/app-footer'
-import { useRoutes } from 'react-router-dom'
+import ZYAppPlayerBar from './pages/player/app-player-bar/index'
 
 const App = memo(() => {
   return (
@@ -18,6 +19,7 @@ const App = memo(() => {
         {useRoutes(routes)}
         </Suspense>
         <ZYAppFooter />
+        <ZYAppPlayerBar/>
         </Provider>
       </div>
   )

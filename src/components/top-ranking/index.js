@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { getSizeImage } from '@/utils/format-utils';
-// import { getSongDetailAction } from '@/pages/player/store';
+import { getSongDetailAction } from '@/pages/player/store';
 
 import { TopRankingWrapper } from './style';
 
@@ -17,9 +17,10 @@ export default memo(function ZYTopRanking(props) {
   const dispatch = useDispatch();
 
   // other handle
-  // const playMusic = (item) => {
-  //   dispatch(getSongDetailAction(item.id));
-  // }
+  const playMusic = (item) => {
+    console.log(item);
+    dispatch(getSongDetailAction(item.id));
+  }
 
   return (
     <TopRankingWrapper>
@@ -46,7 +47,7 @@ export default memo(function ZYTopRanking(props) {
                   <span className="name text-nowrap">{item.name}</span>
                   <div className="operate">
                     <button className="btn sprite_02 play" 
-                      // onClick={e => playMusic(item)}
+                      onClick={e => playMusic(item)}
                     ></button>
                     <button className="btn sprite_icon2 addto"></button>
                     <button className="btn sprite_02 favor"></button>

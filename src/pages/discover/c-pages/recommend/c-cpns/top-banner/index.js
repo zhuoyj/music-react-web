@@ -17,7 +17,7 @@ export default memo(function ZYTopBanner() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   // 组件和redux关联：获取数据和进行操作
-  const { topBanners } = useSelector(state => ({
+  const { topBanners=[] } = useSelector(state => ({
     // topBanners: state.get("recommend").get("topBanners")与下面的写法等价
     topBanners: state.getIn(["recommend","topBanners"])
   }), shallowEqual)

@@ -104,7 +104,9 @@ export const getSongDetailAction = (ids) => {
 
     // 获取当前的歌词,并且解析
     getLyric(ids).then(res => {
+      // console.log(res)
       const lrcString = res.lrc.lyric;
+      // console.log(lrcString)
       const lyrics = parseLyric(lrcString);
       dispatch(changeLyricsAction(lyrics));
     });

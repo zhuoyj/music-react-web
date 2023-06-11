@@ -11,7 +11,7 @@ import {
   changePlaySongAction 
 } from '../store/actionCreators';
 
-// import HYAppPlayPanel from '../app-play-panel'
+import ZYAppPlayPanel from '../app-play-panel'
 import { NavLink } from 'react-router-dom';
 import { Slider } from 'antd';
 import {
@@ -49,7 +49,7 @@ export default memo(function ZYAppPlaybar() {
   // other hooks
   const audioRef = useRef();
   useEffect(() => {
-    dispatch(getSongDetailAction(26159000));
+    dispatch(getSongDetailAction(2045093937));
     // console.log(currentSong)
   }, [dispatch]);
   
@@ -125,7 +125,7 @@ export default memo(function ZYAppPlaybar() {
     if (!isPlaying) {
       play();
     }
-  }, [duration, isPlaying, play]);
+  }, [duration, isPlaying, play]);  
 
   return (
     <PlaybarWrapper className="sprite_playbar">
@@ -175,9 +175,7 @@ export default memo(function ZYAppPlaybar() {
         </Operator>
       </div>
       <audio ref={audioRef} onTimeUpdate={timeUpdate} onEnded={timeEnded} />
-      <div>11111</div>
-      {/* <audio src='https://music.163.com/song/media/outer/url?id=167876.mp3'/> */}
-      {/* {showPanel && <HYAppPlayPanel />} */}
+      {showPanel && <ZYAppPlayPanel />}
     </PlaybarWrapper>
   )
 })

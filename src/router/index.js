@@ -8,7 +8,7 @@ const ZYSongs = React.lazy(_ => import("../pages/discover/c-pages/songs"));
 const ZYDjradio = React.lazy(_ => import("../pages/discover/c-pages/djradio"));
 const ZYArtist = React.lazy(_ => import("../pages/discover/c-pages/artist"));
 const ZYAlbum = React.lazy(_ => import("../pages/discover/c-pages/album"));
-// const ZYPlayer = React.lazy(_ => import("../pages/player"));
+const ZYPlayer = React.lazy(_ => import("../pages/player"));
 
 const ZYFriend = React.lazy(_ => import("../pages/friend"));
 const ZYMine = React.lazy(_ => import("../pages/mine"));
@@ -53,10 +53,10 @@ const routes = [
         path: "/discover/album",
         element: <ZYAlbum/>
       },
-      // {
-      //   path: "/discover/player",
-      //   element: <ZYPlayer/>
-      // }
+      {
+        path: "/discover/player",
+        element: <ZYPlayer/>
+      }
     ]
   },
   {
